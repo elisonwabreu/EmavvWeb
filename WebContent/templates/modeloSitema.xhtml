@@ -16,6 +16,9 @@
 		<p:layout fullPage="true">
 			<p:layoutUnit position="north" resizable="rue">
 				<i:insert name="banner" />
+				<div class="top">
+				<p:commandButton value="Logout" id="ajax"  styleClass="ui-priority-primary" />
+				</div>
 			</p:layoutUnit>
 	
 	
@@ -30,7 +33,9 @@
 			<p:layoutUnit position="south">
 				<i:insert name="footer" />
 				
-					<p:commandLink value="Copy" hreflang="www.google.com.br" />
+				<div style="top:50%;left:50%; height: 10px;">
+					<p:clock />
+				</div>
 				
 			</p:layoutUnit>
 		</p:layout>
