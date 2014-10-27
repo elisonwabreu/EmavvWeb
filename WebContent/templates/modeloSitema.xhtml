@@ -13,23 +13,30 @@
 </h:head>
 
 <h:body>
-	<p:layout fullPage="true">
-		<p:layoutUnit position="north" resizable="rue" >
-			<i:insert name="banner" />
-		</p:layoutUnit>
-		
-		
+		<p:layout fullPage="true">
+			<p:layoutUnit position="north" resizable="rue">
+				<i:insert name="banner" />
+			</p:layoutUnit>
+	
+	
 			<p:layoutUnit position="west" resizable="fasle" size="222">
 				<i:insert name="menu" />
 			</p:layoutUnit>
-
+	
 			<p:layoutUnit position="center">
 				<i:insert name="conteudo" />
+			</p:layoutUnit>
+			
+			<p:layoutUnit position="south">
+				<i:insert name="footer" />
+				
+					<p:commandLink value="Copy" hreflang="www.google.com.br" />
+				
 			</p:layoutUnit>
 		</p:layout>
 
 		<script>
 		$(".ui-dialog").appendTo("body");
-	</script>
+		</script>
 </h:body>
 </html>

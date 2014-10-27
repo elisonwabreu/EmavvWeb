@@ -14,11 +14,8 @@
 				modal="true" closable="false" position="center" showEffect="shade"
 				draggable="true" resizable="false" visible="true">
 
-
-
-				<h:form id="loginForm" method="post">
-					<p:messages id="messages" showDetail="false" autoUpdate="true"
-						closable="true" />
+				<h:form id="loginForm">
+					<p:messages id="messages" showDetail="false" autoUpdate="true" closable="true" />
 
 					<h:panelGrid columns="3" id="atlGrid" cellpadding="5">
 
@@ -30,6 +27,7 @@
 						<p:outputLabel for="password" value="Senha:" />
 						<p:password id="password" required="true" size="23" />
 						<p:message for="password"  display="icon"/>
+						
 					</h:panelGrid>
 
 					<h:panelGrid columns="2" rowClasses="prop">

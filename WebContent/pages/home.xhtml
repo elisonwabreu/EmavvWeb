@@ -16,9 +16,11 @@
 
 	<i:define name="conteudo">
 
-
-
-
+    <h:panelGrid columns="2" columnClasses="left,right" style="width:100%">
+    <p:chart type="line" model="#{chartView.animatedModel1}" style="width:400px;" />
+    <p:chart type="bar" model="#{chartView.animatedModel2}" style="width:400px;" />
+</h:panelGrid>
+    
 
 	</i:define>
 </i:composition>
