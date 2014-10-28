@@ -8,29 +8,42 @@
 <h:head>
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
 	<title>Emavv</title>
-	<h:outputStylesheet library="css" name="estilo.css" />
 	<h:outputScript library="js" name="scripts.js" />
 </h:head>
 
 <h:body>
-		<p:layout fullPage="true">
-			<p:layoutUnit position="north" resizable="rue">
+	<f:facet name="last">
+		<h:outputStylesheet library="css" name="estilo.css" />
+	</f:facet>
+		<p:layout fullPage="true" >
+			<p:layoutUnit position="north" resizable="false"  size="70" collapsible="true" style="min-width:400px;">
 				<i:insert name="banner" />
-				<div class="top">
-				<p:commandButton value="Logout" id="ajax"  styleClass="ui-priority-primary" />
-				</div>
+					 
+					<div class="top">
+						<p:commandButton value="Logout" id="ajax"  styleClass="ui-priority-primary" />
+					</div>
+					
+					<div class="btnAtalhos">
+					
+						<p:commandButton  class="btn-icon"  image="teste" title="Icon Only"/>
+						<p:commandButton  class="btn-icon"  icon="ui-icon-disk" title="Icon Only" />
+						<p:commandButton  class="btn-icon"  icon="ui-icon-disk" title="Icon Only" />
+						<p:commandButton  class="btn-icon"  icon="ui-icon-disk" title="Icon Only" />
+						
+					</div>
+				
 			</p:layoutUnit>
 	
 	
-			<p:layoutUnit position="west" resizable="fasle" size="222">
+			<p:layoutUnit position="west" header="Menu"  resizable="fasle" size="222">
 				<i:insert name="menu" />
 			</p:layoutUnit>
 	
-			<p:layoutUnit position="center">
+			<p:layoutUnit position="center" header="">
 				<i:insert name="conteudo" />
 			</p:layoutUnit>
 			
-			<p:layoutUnit position="south">
+			<p:layoutUnit position="south" >
 				<i:insert name="footer" />
 				
 				<div style="top:50%;left:50%; height: 10px;">

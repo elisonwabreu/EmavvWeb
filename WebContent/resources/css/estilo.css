@@ -11,4 +11,27 @@
 	font-size: 12px !important;
 }
 
-.top{float: right;}
+.top {
+	float: right;
+}
+
+.btnAtalhos {
+	left: 45%;
+	position: absolute;
+}
+
+.btn-icon {
+	margin-left: 5px;
+}
+
+.teste {
+	background-image: url(../img/funcionario_32x32.png) !important;
+	margin-top: -15px !important;
+	margin-left: -15px !important;
+}
+
+.ui-button-icon-only {
+	width: 5em !important;
+	height: 5em !important;
+}
+
