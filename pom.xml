@@ -49,7 +49,12 @@
 		<artifactId>ejb-api</artifactId>
 		<version>3.0</version>
 	</dependency>
-		
+	
+	<dependency>
+	<groupId>jdom</groupId>
+	<artifactId>jdom</artifactId>
+	<version>1.1</version>
+    </dependency>	
 
 	</dependencies>
 	<build>
