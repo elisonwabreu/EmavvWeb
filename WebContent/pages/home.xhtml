@@ -16,16 +16,17 @@
 
 	<i:define name="conteudo">
 
-    <h:panelGrid columns="2" columnClasses="left,right" style="width:100%">
-    <p:chart type="line" model="#{chartView.animatedModel1}" style="width:400px;" />
-    <p:chart type="bar" model="#{chartView.animatedModel2}" style="width:400px;" />
+    <h:panelGrid columns="1" columnClasses="left" style="width:100%">
+	   <!--  <p:chart type="line" model="#{chartView.animatedModel1}" style="width:400px;" /> -->
+	    <p:chart type="bar" model="#{chartView.animatedModel2}" style="width:350px; height:150px; margin-left:10px;" />
     
-    <p:feedReader size="2" value="http://rss.news.yahoo.com/rss/sports" var="feed">
-    <h:outputText value="#{feed.title}" style="font-weight: bold;display:block"/>
-    <h:outputText value="#{feed.description.value}" escape="false"/>
-    <p:separator />
-	</p:feedReader>
-</h:panelGrid>
+	  <br/> <br/>
+	   <p:feedReader size="2"  value="http://rss.news.yahoo.com/rss/sports" var="feed" >
+		    <h:outputText value="#{feed.title}" style="font-weight: bold;display:block"/>
+		    <h:outputText value="#{feed.description.value}" escape="false"/>
+   		 <p:separator />
+		</p:feedReader>
+	</h:panelGrid>
     
 
 	</i:define>
