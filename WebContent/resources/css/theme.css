@@ -1015,7 +1015,6 @@
 }
 
 .menu-principal .ui-state-hover, .menu-principal .ui-widget-content .ui-state-hover{
-	border: 1px solid #0000ff;
 	background: none;
 	background-color: #4297D7;
 	font-weight: normal;
@@ -1044,6 +1043,7 @@
 	padding: 5px;
 	border: 1px solid #77D5F7;
 	width: 388px;
+	
 }
 .logo{
 	background: url('../resources/img/musica.png') no-repeat;

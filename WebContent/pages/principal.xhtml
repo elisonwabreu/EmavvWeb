@@ -5,19 +5,9 @@
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:p="http://primefaces.org/ui"
 	xmlns:i="http://java.sun.com/jsf/facelets"
-	template="/templates/modeloMenu.xhtml">
-
-	<i:define name="banner">
-
-	</i:define>
-	<i:define name="menu">
-		<i:include src="/include/menuSistema.xhtml" />
-	</i:define>
-
-	<i:define name="conteudo">
+	template="/templates/modeloPages.xhtml">
 	
-		<iframe id="frame-principal" name="frame-principal" src="principal.jsf" width="100%" height="100%" frameborder="0" scrolling="auto"></iframe>
-<!-- 
+	<i:define name="conteudo">
 	<div class="chart-principal">
 		<p:chart type="bar" model="#{chartView.animatedModel2}" style="width:100%; height:100%;" />
     </div>
@@ -29,7 +19,5 @@
    		 </div>
 		</p:feedReader>
 	</div>
- -->    
-
-	</i:define>
+    </i:define>
 </i:composition>

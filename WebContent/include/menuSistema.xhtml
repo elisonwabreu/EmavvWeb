@@ -57,12 +57,9 @@
 
 		<p:slideMenu class="menu-principal">
 			<p:submenu label="Aluno" icon="ui-icon-person">
-				<p:menuitem value="Novo" update="messages" icon="ui-icon-radio-on" />
+				<p:menuitem value="Novo" update="messages" icon="ui-icon-radio-on" target="frame-principal" url="teste.jsf"/>
 				<p:menuitem value="Matricula" update="messages"
 					icon="ui-icon-radio-on" />
-			</p:submenu>
-			<p:submenu label="Funcionários" icon="ui-icon-person">
-				<p:menuitem value="Novo" update="messages" icon="ui-icon-radio-on" />
 			</p:submenu>
 
 			<p:submenu label="Cursos" icon="ui-icon-note	">
@@ -71,6 +68,9 @@
 					<p:menuitem value="PrimeFaces" url="http://www.primefaces.org" />
 				</p:submenu>
 				<p:menuitem value="Mobile" />
+			</p:submenu>
+			<p:submenu label="Funcionários" icon="ui-icon-person">
+				<p:menuitem value="Novo" update="messages" icon="ui-icon-radio-on" />
 			</p:submenu>
 		</p:slideMenu>
 		<p:separator />

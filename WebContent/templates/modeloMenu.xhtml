@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:i="http://java.sun.com/jsf/facelets">
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<title>Emavv</title>
+	<h:outputScript library="js" name="scripts.js" />
+</h:head>
+
+<h:body>
+<!-- 
+	<f:facet name="last">
+		<h:outputStylesheet library="css" name="theme.css" />
+		<h:outputStylesheet library="css" name="estilo.css" />
+	</f:facet>
+-->
+		<p:layout fullPage="true" >
+			<p:layoutUnit position="north" resizable="false"   collapsible="true" style="min-width:400px; min-height:80px;">
+				<i:insert name="banner" />
+					
+						<a target="frame-principal" href="principal.jsf"><span class="logo"></span></a>					
+					
+					<div class="btnAtalhos"><!-- *AT* -->
+					
+						<p:commandButton 	class="btn-atl"  icon="icon-aluno" 			title="Alunos" />
+						<p:commandButton  	class="btn-atl"  icon="icon-relatorio"  	title="Relatórios Alunos" />
+						<p:commandButton  	class="btn-atl"  icon="icon-contaReceber"  	title="Receber Mensalidade" />
+						<p:commandButton  	class="btn-atl"  icon="icon-configura" 		title="Configurações" />
+						
+					</div>
+					
+					<div class="top">
+						<p:commandButton value="Logout" id="ajax"  styleClass="ui-priority-primary" />
+					</div>
+				
+			</p:layoutUnit>
+	
+			<p:layoutUnit position="west" header="Menu" styleClass="menu-titulo" resizable="fasle" size="222">
+				<i:insert name="menu" />
+			</p:layoutUnit>
+	
+			<p:layoutUnit position="center" header="">
+				<i:insert name="conteudo" />
+			</p:layoutUnit>
+			
+			<p:layoutUnit position="south" >
+				<i:insert name="footer" />
+				
+				<div style="top:50%;left:50%; height: 10px;">
+					<p:clock />
+				</div>
+				
+			</p:layoutUnit>
+		</p:layout>
+
+		<script>
+		$(".ui-dialog").appendTo("body");
+		</script>
+</h:body>
+</html>
