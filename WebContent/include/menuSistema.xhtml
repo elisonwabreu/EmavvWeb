@@ -6,7 +6,7 @@
 	xmlns:p="http://primefaces.org/ui"
 	xmlns:i="http://java.sun.com/jsf/facelets">
 
-<!-- 	<h:form>
+	<!-- 	<h:form>
     <p:growl autoUpdate="true"/>
  
     <p:panelMenu style="width:210px">
@@ -46,29 +46,34 @@
     </p:panelMenu>
             <p:calendar mode="inline" />
 </h:form>  -->
-	
-	
+
+	<f:facet name="last">
+ 		<h:outputStylesheet library="css" name="theme.css" />
+		<h:outputStylesheet library="css" name="estilo.css" />
+	</f:facet>
+
 	<h:form>
-    <p:growl id="messages" showDetail="true"/>
- 
-    <p:slideMenu style="width:205px">
-        <p:submenu 	label="Aluno" 								icon="ui-icon-person">
-             <p:menuitem value="Novo"  		update="messages" 	icon="ui-icon-radio-on" />
-           	 <p:menuitem value="Matricula"  update="messages" 	icon="ui-icon-radio-on" />
-        </p:submenu>
-        <p:submenu  label="Funcionários" icon="ui-icon-person">
-          	 <p:menuitem value="Novo"  		update="messages" 	icon="ui-icon-radio-on" />
-        </p:submenu>
-       
-        <p:submenu label="Cursos" icon="ui-icon-note	">
-            <p:submenu label="Prime Links">
-                <p:menuitem value="Prime" url="http://www.prime.com.tr" />
-                <p:menuitem value="PrimeFaces" url="http://www.primefaces.org" />
-            </p:submenu>
-            <p:menuitem value="Mobile"  />
-        </p:submenu>
-    </p:slideMenu>
-   <p:separator />
-     <p:calendar mode="inline" locale="pt_BR"/>
-    </h:form>
+		<p:growl id="messages" showDetail="true" />
+
+		<p:slideMenu class="menu-principal">
+			<p:submenu label="Aluno" icon="ui-icon-person">
+				<p:menuitem value="Novo" update="messages" icon="ui-icon-radio-on" />
+				<p:menuitem value="Matricula" update="messages"
+					icon="ui-icon-radio-on" />
+			</p:submenu>
+			<p:submenu label="Funcionários" icon="ui-icon-person">
+				<p:menuitem value="Novo" update="messages" icon="ui-icon-radio-on" />
+			</p:submenu>
+
+			<p:submenu label="Cursos" icon="ui-icon-note	">
+				<p:submenu label="Prime Links">
+					<p:menuitem value="Prime" url="http://www.prime.com.tr" />
+					<p:menuitem value="PrimeFaces" url="http://www.primefaces.org" />
+				</p:submenu>
+				<p:menuitem value="Mobile" />
+			</p:submenu>
+		</p:slideMenu>
+		<p:separator />
+		<p:calendar mode="inline" locale="pt_BR" />
+	</h:form>
 </i:composition>
