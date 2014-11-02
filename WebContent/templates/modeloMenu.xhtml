@@ -12,12 +12,12 @@
 </h:head>
 
 <h:body>
-<!-- 
+
 	<f:facet name="last">
 		<h:outputStylesheet library="css" name="theme.css" />
 		<h:outputStylesheet library="css" name="estilo.css" />
 	</f:facet>
--->
+
 		<p:layout fullPage="true" >
 			<p:layoutUnit position="north" resizable="false"   collapsible="true" style="min-width:400px; min-height:80px;">
 				<i:insert name="banner" />
@@ -50,9 +50,9 @@
 			<p:layoutUnit position="south" >
 				<i:insert name="footer" />
 				
-				<div style="top:50%;left:50%; height: 10px;">
-					<p:clock />
-				</div>
+			 <div class="relogio"> 
+					<p:clock  />
+			 </div> 
 				
 			</p:layoutUnit>
 		</p:layout>

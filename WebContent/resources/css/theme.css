@@ -1050,7 +1050,19 @@
 	float: left;
 	width: 232px;
 	height: 124px;
+	display: block;
+	
 
+}
+.relogio{
+	margin-top: 5px;
+	top:50%;
+	left:50%; 
+	height: 20px;
+}
+.input .up{
+	
+	text-transform: uppercase;
 }
 /*=========================== BOTOES DO TOPO FIXO ========================================*/
 .btn-atl {
@@ -1058,6 +1070,7 @@
 	width: 50px;
 	height: 50px;
 	margin-top: 15px;
+	display: inline-block;
 }
 .ui-button .icon-aluno {
 	background: url('../resources/img/aluno_32x32.png') no-repeat;
@@ -1088,3 +1101,17 @@
 	margin-top: -16px;
 }
 /*=========================== BOTOES DO TOPO FIXO ========================================*/
+/*=========================== TABELA ALUNOS LISTAGEM ========================================*/
+.ui-datatable table .codAluno {
+	
+	width: 60px;
+}
+.ui-datatable table .nomeAluno {
+	
+	width: 560px;
+}
+.dataTableAluno{
+	
+	width: 1090px;
+}
+/*=========================== TABELA ALUNOS LISTAGEM ========================================*/
