@@ -52,19 +52,24 @@
 							filterMatchMode="contains">
 					<h:outputText value="" />
 				</p:column>
-				
+			<!-- BOTOES DE INCLUIR EDITAR E EXCLUIR EM ALUNO -->	
 				<f:facet name="footer">
+				
 					<p:commandButton 	value="Novo"
 										oncomplete="PF('dlgAlunoNovo').show();"
+										
 										icon="ui-icon-circle-plus" />
+										
 					<p:commandButton 	value="Editar"
 										oncomplete="PF('dlgAlunoEditar').show();" 
 										icon="ui-icon-pencil"/>
+										
 					<p:commandButton 	value="Excluir"
 										oncomplete="PF('dlgAlunoExcluir').show();"
 										icon="ui-icon-trash" />
+										
 				</f:facet>
-				
+			<!-- BOTOES DE INCLUIR EDITAR E EXCLUIR EM ALUNO -->	
 			</p:dataTable>
 			
 		</h:form>
@@ -79,61 +84,63 @@
 					hideEffect="explode" >
 
 			<h:form id="frmAlunoNovo">
-			
+			<p:messages id="messages" showDetail="true" autoUpdate="true" closable="true" />
 				<p:tabView dynamic="true" cache="true">
         <p:tab title="Dados Pessoais">
         
-            <h:panelGrid columns="2" cellpadding="2" id="pnlAlunoNovo" > 
-               		<h:outputLabel 	value="Nome:"  />
-					<h:inputText 	size="60" 	maxlength="150"	 styleClass="up"/>
+            <h:panelGrid columns="2" cellpadding="3" id="pnlAlunoNovo" > 
+               		<p:outputLabel 	for="nome" value="Nome:"  />
+					<p:inputText 	id="nome"	required="true"	size="60" 	maxlength="150"	 styleClass="up"/>
 					
-					<h:outputLabel 	value="Status:" />
-						<p:selectOneMenu id="console" value="#{selectOneMenuView.console}">
+					
+					<p:outputLabel 	value="Status:" />
+						<p:selectOneMenu id="console"  value="#{selectOneMenuView.console}">
+				            <f:selectItem itemLabel="" 				itemValue="" />
 				            <f:selectItem itemLabel="Ativo" 		itemValue="Ativo" />
 				            <f:selectItem itemLabel="Inativo" 		itemValue="Inativo" />
 				        </p:selectOneMenu>
 					
-					<h:outputLabel 	value="CPF:" />
-					<p:inputMask id="cpf" size="14" value="#{maskView.cpf}" mask="999.999.999-99"/>
+					<p:outputLabel for="cpf" 	value="CPF:" />
+					<p:inputMask id="cpf" required="true" size="14" value="#{maskView.cpf}" mask="999.999.999-99"/>
 					
-					<h:outputLabel 	value="RG:" />
-					<p:inputMask mask="9?999999999999999" placeHolder=""/> 
+					<p:outputLabel 	for="rg" value="RG:" />
+					<p:inputMask id="rg" required="true" mask="9?999999999999999" placeHolder=""/> 
 					
 					<p:outputLabel for="effect" value="Data Nascimento:" />
-        			<p:calendar id="effect" size="10"  showOn="button"/>
+        			<p:calendar id="effect" size="10"  showOn="button" required="true"/>
         			
-        			<h:outputLabel 	value="Sexo:" />
-						<p:selectOneMenu id="sexo" value="#{selectOneMenuView.console}">
+        			<p:outputLabel	value="Sexo:" />
+						<p:selectOneMenu id="sexo" value="#{selectOneMenuView.console}" required="true">
 				            <f:selectItem itemLabel="" 					itemValue="" />
 				            <f:selectItem itemLabel="MASCULINO" 		itemValue="A" />
 				            <f:selectItem itemLabel="FEMININO" 			itemValue="I" />
 				    </p:selectOneMenu>
 					
-					<h:outputLabel 	value="Nome da Mãe:"  />
-					<h:inputText 	size="60" 	maxlength="150"	 styleClass="up"/>
+					<p:outputLabel for="mae"	value="Nome da Mãe:"  />
+					<p:inputText  id="mae"	size="60" 	maxlength="150"	 styleClass="up" />
 					
 					<h:outputLabel 	value="E-mail:"  />
-					<p:inputText id="email" value="#{customValidationView.text}" size="30">
-                		<f:validator validatorId="custom.emailValidator" />
+					<p:inputText id="email"  size="30">
+                		
             		</p:inputText>
              </h:panelGrid> 
              
         </p:tab>
         <p:tab title="Endereço">
             <h:panelGrid columns="2" cellpadding="2">
-               <h:outputLabel 	value="CEP:" />
+               <p:outputLabel 	value="CEP:" />
 					<p:inputMask id="cep" size="10" value="#{maskView.cep}" mask="99999-999"/>
 					
-					<h:outputLabel 	value="Logradouro:" />
-					<h:inputText 	size="30" 	maxlength="50"	 />
+					<p:outputLabel 	value="Logradouro:" />
+					<p:inputText 	size="30" 	maxlength="50"	 />
 					
-					<h:outputLabel 	value="Nº:" />
+					<p:outputLabel 	value="Nº:" />
 					<p:inputMask mask="9?999999999999999" placeHolder=""/>
 					
-					<h:outputLabel 	value="Bairro:"  />
-					<h:inputText 	size="30" 	maxlength="150"	 styleClass="up"/>
+					<p:outputLabel 	value="Bairro:"  />
+					<p:inputText 	size="30" 	maxlength="150"	 styleClass="up"/>
 					
-					<h:outputLabel 	value="UF:"  />
+					<p:outputLabel 	value="UF:"  />
 						<p:selectOneMenu id="uf" value="#{selectOneMenuView.console}" >
 				            <f:selectItem itemLabel="" 						itemValue="" />
 				            <f:selectItem itemLabel="ACRE" 					itemValue="AC" />
@@ -165,10 +172,10 @@
 				            <f:selectItem itemLabel="TOCANTINS" 			itemValue="TO" />
 				        </p:selectOneMenu>
 				        
-					<h:outputLabel 	value="Complemento"  />
-					<h:inputText 	size="30" 	maxlength="150"	 styleClass="up"/>
+					<p:outputLabel 	value="Complemento"  />
+					<p:inputText 	size="30" 	maxlength="150"	 styleClass="up"/>
 					
-					<h:outputLabel 	value="Telefone:"  />
+					<p:outputLabel 	value="Telefone:"  />
 					<p:inputMask id="telefone" value="#{maskView.telefone}" mask="(999) 9999-9999?" size="15"/>
 					
 					<h:outputLabel 	value="Celular:"  />
@@ -187,14 +194,19 @@
 							</h:form>
 			        </p:tab>
 			    </p:tabView>	
-				<h:panelGrid columns="3">
+				<h:panelGrid columns="10">
 				
 					<p:commandButton 	value="Gravar"
-										oncomplete="PF('dlgAlunoNovo').hide();"
-										update=":frmAlunoListar:refreshAluno" 	icon="ui-icon-check"/>
+										oncomplete="verificar(xhr, status, args, 'dlgAlunoNovo', 'frmAlunoNovo');"
+										update=":frmAlunoListar:refreshAluno"
+										icon="ui-icon-check"/>
+										<!--  PF('dlgAlunoNovo').hide(); -->
 					<p:commandButton 	value="Cancelar"
-										onclick="PF('dlgFabNovo').hide();"		icon="ui-icon-check" />
-					<p:commandButton 	type="reset"	value="Limpar" 			icon="ui-icon-check"  />
+										onclick="PF('dlgFabNovo').hide();"		
+										icon="ui-icon-check" />
+					<p:commandButton 	type="reset"	
+										value="Limpar" 			
+										icon="ui-icon-check"  />
 				</h:panelGrid>
 			</h:form>
 		</p:dialog>
@@ -212,123 +224,123 @@
 			<h:form id="frmAlunoEditar">
 			
 				<p:tabView dynamic="true" cache="true">
-        <p:tab title="Dados Pessoais">
+       				 <p:tab title="Dados Pessoais">
         
-            <h:panelGrid columns="2" cellpadding="2" id="pnlAlunoEditar" > 
-               		<h:outputLabel 	value="Nome:"  />
-					<h:outputText 	size="60" 	maxlength="150"	 styleClass="up" value="eidtar"/>
+            			<h:panelGrid columns="2" cellpadding="2" id="pnlAlunoEditar" > 
+		               		<h:outputLabel 	value="Nome:"  />
+							<h:inputText 	size="60" 	maxlength="150"	 styleClass="up" value="eidtar"/>
+							
+							<h:outputLabel 	value="Status:" />
+								<p:selectOneMenu id="console" value="#{selectOneMenuView.console}">
+						            <f:selectItem itemLabel="Ativo" 		itemValue="Ativo" />
+						            <f:selectItem itemLabel="Inativo" 		itemValue="Inativo" />
+						        </p:selectOneMenu>
 					
-					<h:outputLabel 	value="Status:" />
-						<p:selectOneMenu id="console" value="#{selectOneMenuView.console}">
-				            <f:selectItem itemLabel="Ativo" 		itemValue="Ativo" />
-				            <f:selectItem itemLabel="Inativo" 		itemValue="Inativo" />
-				        </p:selectOneMenu>
+							<h:outputLabel 	value="CPF:" />
+							<p:inputMask id="cpf" size="14" value="#{maskView.cpf}" mask="999.999.999-99"/>
+							
+							<h:outputLabel 	value="RG:" />
+							<p:inputMask mask="9?999999999999999" placeHolder=""/> 
+							
+							<p:outputLabel for="effect" value="Data Nascimento:" />
+		        			<p:calendar id="effect" size="10"  showOn="button"/>
+		        			
+		        			<h:outputLabel 	value="Sexo:" />
+								<p:selectOneMenu id="sexo" value="#{selectOneMenuView.console}">
+						            <f:selectItem itemLabel="" 					itemValue="" />
+						            <f:selectItem itemLabel="MASCULINO" 		itemValue="A" />
+						            <f:selectItem itemLabel="FEMININO" 			itemValue="I" />
+						    </p:selectOneMenu>
 					
-					<h:outputLabel 	value="CPF:" />
-					<p:inputMask id="cpf" size="14" value="#{maskView.cpf}" mask="999.999.999-99"/>
-					
-					<h:outputLabel 	value="RG:" />
-					<p:inputMask mask="9?999999999999999" placeHolder=""/> 
-					
-					<p:outputLabel for="effect" value="Data Nascimento:" />
-        			<p:calendar id="effect" size="10"  showOn="button"/>
-        			
-        			<h:outputLabel 	value="Sexo:" />
-						<p:selectOneMenu id="sexo" value="#{selectOneMenuView.console}">
-				            <f:selectItem itemLabel="" 					itemValue="" />
-				            <f:selectItem itemLabel="MASCULINO" 		itemValue="A" />
-				            <f:selectItem itemLabel="FEMININO" 			itemValue="I" />
-				    </p:selectOneMenu>
-					
-					<h:outputLabel 	value="Nome da Mãe:"  />
-					<h:inputText 	size="60" 	maxlength="150"	 styleClass="up"/>
-					
-					<h:outputLabel 	value="E-mail:"  />
-					<p:inputText id="email" value="#{customValidationView.text}" size="30">
-                		<f:validator validatorId="custom.emailValidator" />
-            		</p:inputText>
-             </h:panelGrid> 
+							<h:outputLabel 	value="Nome da Mãe:"  />
+							<h:inputText 	size="60" 	maxlength="150"	 styleClass="up"/>
+							
+							<h:outputLabel 	value="E-mail:"  />
+							<p:inputText id="email" value="#{customValidationView.text}" size="30">
+		            		</p:inputText>
+            		 </h:panelGrid> 
              
-        </p:tab>
-        <p:tab title="Endereço">
-            <h:panelGrid columns="2" cellpadding="2">
-               <h:outputLabel 	value="CEP:" />
-					<p:inputMask id="cep" size="10" value="#{maskView.cep}" mask="99999-999"/>
-					
-					<h:outputLabel 	value="Logradouro:" />
-					<h:inputText 	size="30" 	maxlength="50"	 />
-					
-					<h:outputLabel 	value="Nº:" />
-					<p:inputMask mask="9?999999999999999" placeHolder=""/>
-					
-					<h:outputLabel 	value="Bairro:"  />
-					<h:inputText 	size="30" 	maxlength="150"	 styleClass="up"/>
-					
-					<h:outputLabel 	value="UF:"  />
-						<p:selectOneMenu id="uf" value="#{selectOneMenuView.console}" >
-				            <f:selectItem itemLabel="" 						itemValue="" />
-				            <f:selectItem itemLabel="ACRE" 					itemValue="AC" />
-				            <f:selectItem itemLabel="ALAGOAS" 				itemValue="AL" />
-				            <f:selectItem itemLabel="AMAPÁ" 				itemValue="AP" />
-				            <f:selectItem itemLabel="AMAZONAS" 				itemValue="AM" />
-				            <f:selectItem itemLabel="BAHIA" 				itemValue="BH" />
-				            <f:selectItem itemLabel="CEARÁ" 				itemValue="CE" />
-				            <f:selectItem itemLabel="DISTRITO FEDERAL" 		itemValue="DF" />
-				            <f:selectItem itemLabel="ESPÍRITO SANTO" 		itemValue="ES" />
-				            <f:selectItem itemLabel="GOIÁS" 				itemValue="GO" />
-				            <f:selectItem itemLabel="MARANHÃO" 				itemValue="MA" />
-				            <f:selectItem itemLabel="MATO GROSSO" 			itemValue="MT" />
-				            <f:selectItem itemLabel="MATO GROSSO DO SUL"	itemValue="MS" />
-				            <f:selectItem itemLabel="MINAS GERAIS" 			itemValue="MG" />
-				            <f:selectItem itemLabel="PARÁ" 					itemValue="PA" />
-				            <f:selectItem itemLabel="PARAÍBA" 				itemValue="PB" />
-				            <f:selectItem itemLabel="PARANÁ" 				itemValue="PR" />
-				            <f:selectItem itemLabel="PERNAMBUCO" 			itemValue="PE" />
-				            <f:selectItem itemLabel="PIAUÍ" 				itemValue="PI" />
-				            <f:selectItem itemLabel="RIO DE JANEIRO" 		itemValue="RJ" />
-				            <f:selectItem itemLabel="RIO GRANDE DO NORTE" 	itemValue="RN" />
-				            <f:selectItem itemLabel="RIO GRANDE DO SUL" 	itemValue="RS" />
-				            <f:selectItem itemLabel="RONDÔNIA" 				itemValue="RO" />
-				            <f:selectItem itemLabel="RORAIMA" 				itemValue="RR" />
-				            <f:selectItem itemLabel="SANTA CATARINA" 		itemValue="SC" />
-				            <f:selectItem itemLabel="SÃO PAULO" 			itemValue="SP" />
-				            <f:selectItem itemLabel="SERGIPE" 				itemValue="SE" />
-				            <f:selectItem itemLabel="TOCANTINS" 			itemValue="TO" />
-				        </p:selectOneMenu>
-				        
-					<h:outputLabel 	value="Complemento"  />
-					<h:inputText 	size="30" 	maxlength="150"	 styleClass="up"/>
-					
-					<h:outputLabel 	value="Telefone:"  />
-					<p:inputMask id="telefone" value="#{maskView.telefone}" mask="(999) 9999-9999?" size="15"/>
-					
-					<h:outputLabel 	value="Celular:"  />
-					<p:inputMask id="celular" value="#{maskView.telefone}" mask="(999) 9999-9999?" size="15"/>
-					
-            </h:panelGrid>
-        			</p:tab>
-			        <p:tab title="Foto">
-				           <h:form>        
-							    <h:panelGrid columns="2" cellpadding="5">
-							        <p:photoCam widgetVar="pc" listener="#{photoCamView.oncapture}" update="photo"/>
-							         <p:graphicImage id="photo" name="/webcamfotos/#{photoCamView.filename}.png" />
-							        <p:commandButton type="button" value="Capturar" onclick="PF('pc').capture()"/>
-							       
-							    </h:panelGrid>
-							</h:form>
 			        </p:tab>
-			    </p:tabView>	
-				<h:panelGrid columns="3">
-				
-					<p:commandButton 	value="Gravar"
-										oncomplete="PF('dlgAlunoEditar').hide();"
-										update=":frmAlunoListar:refreshAluno" 	icon="ui-icon-check"/>
-					<p:commandButton 	value="Cancelar"
-										onclick="PF('dlgFabEditar').hide();"	icon="ui-icon-check" />
-					<p:commandButton 	type="reset"	value="Limpar" 			icon="ui-icon-check"  />
-				</h:panelGrid>
-			</h:form>
-		</p:dialog>
+			        <p:tab title="Endereço">
+			            <h:panelGrid columns="2" cellpadding="2">
+			               <h:outputLabel 	value="CEP:" />
+								<p:inputMask id="cep" size="10" value="#{maskView.cep}" mask="99999-999"/>
+								
+								<h:outputLabel 	value="Logradouro:" />
+								<h:inputText 	size="30" 	maxlength="50"	 />
+								
+								<h:outputLabel 	value="Nº:" />
+								<p:inputMask mask="9?999999999999999" placeHolder=""/>
+								
+								<h:outputLabel 	value="Bairro:"  />
+								<h:inputText 	size="30" 	maxlength="150"	 styleClass="up"/>
+								
+								<h:outputLabel 	value="UF:"  />
+									<p:selectOneMenu id="uf" value="#{selectOneMenuView.console}" >
+							            <f:selectItem itemLabel="" 						itemValue="" />
+							            <f:selectItem itemLabel="ACRE" 					itemValue="AC" />
+							            <f:selectItem itemLabel="ALAGOAS" 				itemValue="AL" />
+							            <f:selectItem itemLabel="AMAPÁ" 				itemValue="AP" />
+							            <f:selectItem itemLabel="AMAZONAS" 				itemValue="AM" />
+							            <f:selectItem itemLabel="BAHIA" 				itemValue="BH" />
+							            <f:selectItem itemLabel="CEARÁ" 				itemValue="CE" />
+							            <f:selectItem itemLabel="DISTRITO FEDERAL" 		itemValue="DF" />
+							            <f:selectItem itemLabel="ESPÍRITO SANTO" 		itemValue="ES" />
+							            <f:selectItem itemLabel="GOIÁS" 				itemValue="GO" />
+							            <f:selectItem itemLabel="MARANHÃO" 				itemValue="MA" />
+							            <f:selectItem itemLabel="MATO GROSSO" 			itemValue="MT" />
+							            <f:selectItem itemLabel="MATO GROSSO DO SUL"	itemValue="MS" />
+							            <f:selectItem itemLabel="MINAS GERAIS" 			itemValue="MG" />
+							            <f:selectItem itemLabel="PARÁ" 					itemValue="PA" />
+							            <f:selectItem itemLabel="PARAÍBA" 				itemValue="PB" />
+							            <f:selectItem itemLabel="PARANÁ" 				itemValue="PR" />
+							            <f:selectItem itemLabel="PERNAMBUCO" 			itemValue="PE" />
+							            <f:selectItem itemLabel="PIAUÍ" 				itemValue="PI" />
+							            <f:selectItem itemLabel="RIO DE JANEIRO" 		itemValue="RJ" />
+							            <f:selectItem itemLabel="RIO GRANDE DO NORTE" 	itemValue="RN" />
+							            <f:selectItem itemLabel="RIO GRANDE DO SUL" 	itemValue="RS" />
+							            <f:selectItem itemLabel="RONDÔNIA" 				itemValue="RO" />
+							            <f:selectItem itemLabel="RORAIMA" 				itemValue="RR" />
+							            <f:selectItem itemLabel="SANTA CATARINA" 		itemValue="SC" />
+							            <f:selectItem itemLabel="SÃO PAULO" 			itemValue="SP" />
+							            <f:selectItem itemLabel="SERGIPE" 				itemValue="SE" />
+							            <f:selectItem itemLabel="TOCANTINS" 			itemValue="TO" />
+							        </p:selectOneMenu>
+							        
+								<h:outputLabel 	value="Complemento"  />
+								<h:inputText 	size="30" 	maxlength="150"	 styleClass="up"/>
+								
+								<h:outputLabel 	value="Telefone:"  />
+								<p:inputMask id="telefone" value="#{maskView.telefone}" mask="(999) 9999-9999?" size="15"/>
+								
+								<h:outputLabel 	value="Celular:"  />
+								<p:inputMask id="celular" value="#{maskView.telefone}" mask="(999) 9999-9999?" size="15"/>
+								
+			            </h:panelGrid>
+			        			</p:tab>
+						        <p:tab title="Foto">
+							           <h:form>        
+										    <h:panelGrid columns="2" cellpadding="5">
+										        <p:photoCam widgetVar="pc" listener="#{photoCamView.oncapture}" update="photo"/>
+										         <p:graphicImage id="photo" name="/webcamfotos/#{photoCamView.filename}.png" />
+										        <p:commandButton type="button" value="Capturar" onclick="PF('pc').capture()"/>
+										       
+										    </h:panelGrid>
+										</h:form>
+						        </p:tab>
+						    </p:tabView>	
+							<h:panelGrid columns="10">
+							
+								<p:commandButton 	value="Gravar"
+													oncomplete="PF('dlgAlunoEditar').hide();"
+													update=":frmAlunoListar:refreshAluno" 	icon="ui-icon-check"/>
+								<p:commandButton 	value="Cancelar"
+													onclick="PF('dlgFabEditar').hide();"	icon="ui-icon-check" />
+								<p:commandButton 	type="reset"	value="Limpar" 		ajax="true" immediate="true"	icon="ui-icon-check"  />
+								
+							</h:panelGrid>
+						</h:form>
+					</p:dialog>
 		<!-- FIM DO DIALOGO PARA EDITAR UM  ALUNO -->
 
 	</i:define>

@@ -31,8 +31,8 @@ public class EmailValidator implements Validator, ClientValidator {
         }
          
         if(!pattern.matcher(value.toString()).matches()) {
-            throw new ValidatorException(new FacesMessage(FacesMessage.SEVERITY_ERROR, "Validation Error", 
-                        value + " is not a valid email;"));
+            throw new ValidatorException(new FacesMessage(FacesMessage.SEVERITY_ERROR, "Erro ao validar", 
+                        value + " O e-mail informado não é válido.;"));
         }
     }
  

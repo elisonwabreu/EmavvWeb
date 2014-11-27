@@ -20,12 +20,12 @@
 					<h:panelGrid columns="3" id="atlGrid" cellpadding="5">
 
 						<p:outputLabel 	for="username" 	value="Usuário:" />
-						<p:inputText 	id="username" 	required="true"  size="23"/>
+						<p:inputText 	id="username" 	required="true"  size="23" value="#{autenticacaoBean.login}"/>
 						<p:message 		for="username" 	display="icon" />
 						
 
 						<p:outputLabel 	for="password" 	value="Senha:" />
-						<p:password 	id="password"	required="true" size="23" />
+						<p:password 	id="password"	required="true" size="23" value="#{autenticacaoBean.senha}" />
 						<p:message 		for="password"  display="icon"/>
 						
 					</h:panelGrid>
@@ -33,15 +33,27 @@
 					<h:panelGrid columns="2" rowClasses="prop">
 						<p:commandButton 	id="submit" 			type="submit" 	value="Entrar"
 											icon="ui-icon-check" 	update="atlGrid"
-											oncomplete="verificar(xhr, status, args, 'dlgLogin', 'loginForm');" 
-											ajax="false" 			action="/pages/home.xhtml"  />
+											actionListener="#{autenticacaoBean.autenticarUsuario}"
+											oncomplete="handleLoginRequest(xhr, status, args);" 
+											  />
 								
 						<p:commandButton 	type="reset"			value="Limpar" 	icon="ui-icon-check"  />
 					</h:panelGrid>
 
 				</h:form>
 			</p:dialog>
-
+			<script type="text/javascript">
+			function handleLoginRequest(xhr, status, args) {
+			    if(args.validationFailed || !args.loggedIn) {
+			        PF('dlgLogin').jq.effect("shake", {times:5}, 100);
+			    }
+			    else {
+			        PF('dlgLogin').hide();
+			        location.href="http://localhost:8080/EmavvWeb/pages/home.jsf";
+			        $('#loginLink').fadeOut();
+			    }
+			}
+			</script>
 		</div>
 	</i:define>
 </i:composition>
