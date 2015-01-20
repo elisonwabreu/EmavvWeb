@@ -22,8 +22,6 @@
 						<p:outputLabel 	for="username" 	value="Usuário:" />
 						<p:inputText 	id="username" 	required="true"  size="23" value="#{autenticacaoBean.login}"/>
 						<p:message 		for="username" 	display="icon" />
-						
-
 						<p:outputLabel 	for="password" 	value="Senha:" />
 						<p:password 	id="password"	required="true" size="23" value="#{autenticacaoBean.senha}" />
 						<p:message 		for="password"  display="icon"/>
@@ -34,9 +32,7 @@
 						<p:commandButton 	id="submit" 			type="submit" 	value="Entrar"
 											icon="ui-icon-check" 	update="atlGrid"
 											actionListener="#{autenticacaoBean.autenticarUsuario}"
-											oncomplete="handleLoginRequest(xhr, status, args);" 
-											  />
-								
+											oncomplete="handleLoginRequest(xhr, status, args);" />
 						<p:commandButton 	type="reset"			value="Limpar" 	icon="ui-icon-check"  />
 					</h:panelGrid>
 

@@ -1043,7 +1043,6 @@
 	padding: 5px;
 	border: 1px solid #77D5F7;
 	width: 388px;
-	
 }
 .logo{
 	background: url('../resources/img/musica.png') no-repeat;
@@ -1051,8 +1050,6 @@
 	width: 232px;
 	height: 124px;
 	display: block;
-	
-
 }
 .relogio{
 	margin-top: 5px;
@@ -1061,12 +1058,10 @@
 	height: 20px;
 }
 .input .up{
-	
 	text-transform: uppercase;
 }
 /*=========================== BOTOES DO TOPO FIXO ========================================*/
 .btn-atl {
-	
 	width: 50px;
 	height: 50px;
 	margin-top: 15px;
@@ -1103,15 +1098,12 @@
 /*=========================== BOTOES DO TOPO FIXO ========================================*/
 /*=========================== TABELA ALUNOS LISTAGEM ========================================*/
 .ui-datatable table .codAluno {
-	
 	width: 60px;
 }
 .ui-datatable table .nomeAluno {
-	
 	width: 560px;
 }
 .dataTableAluno{
-	
 	width: 1090px;
 }
 /*=========================== TABELA ALUNOS LISTAGEM ========================================*/

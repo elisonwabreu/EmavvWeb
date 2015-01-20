@@ -1,7 +1,7 @@
 WARNING=DO NOT MODIFY THIS FILE IF YOU DON'T UNDERSTAND
-defaultDestination=F\:/Projetos/servers/wildfly-8.1.0.Final/standalone/deployments
+defaultDestination=C\:/Users/elisonwilson/wildfly-8.1.0.Final/standalone/deployments
 defaultVariables=
 eclipse.preferences.version=1
 includeTeamPrivateFiles=false
-map|0=/|,|,|WebContent/;target/;src/;build/;.settings/;.idea/|,
+map|0=/|,|,|.idea/;.settings/;build/;src/;target/;WebContent/|,
 useCurrentDateForDestinationFiles=false
